@@ -42,3 +42,12 @@ h3{
 .nothing{
     height: 80vh;
 }
+
+.noimagen{
+    color: rgb(146, 24, 8);
+    padding-top: 40%;
+    border: 1px transparent white;
+    height: 13.5em;
+    
+
+}

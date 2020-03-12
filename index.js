@@ -60,7 +60,7 @@ document.querySelector('.buscarInput')
             if( peliculas.length > 0){
                 peliculas.forEach(pelicula=>{
                     const imagen = pelicula.poster_path ? `
-                    <img src="${baseImgUrl}${pelicula.poster_path}" alt="">`:''
+                    <img src="${baseImgUrl}${pelicula.poster_path}" alt="">`:'<h3 class="noimagen">No hay imagen disponible</h3>'
                     
                     peliculasContainer.innerHTML+=`
                     <div class="pelicula">
