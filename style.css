@@ -75,11 +75,39 @@ h3{
     text-align: center;
 }
 
+/* DETALLES DE LAS PELÍCULAS */
+
+.details{
+    color: white;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.imageDetails{
+    display:flex;  
+    justify-content: center;
+}
+
+.title{
+    width: 100%;
+    margin-bottom: 2.5em;
+}
+
+p{
+    width: 50%;
+    padding-left: 10%;
+}
+
+.nodescripcion{
+    padding-top: 20%;
+}
+
+/* RESPONSIVE */
+
 @media (max-width: 622px) {
      .peliculas{
         margin-top: 8em;
      }
-
 }
 
 @media (max-width: 575px) {

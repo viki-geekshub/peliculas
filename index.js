@@ -1,23 +1,23 @@
 const peliculasContainer = document.querySelector('main.peliculas');
-
+const baseImgUrl = 'https://image.tmdb.org/t/p/w185';
 fetch('https://api.themoviedb.org/3/movie/popular?api_key=cea68b520beecac6718820e4ac576c3a&language=es-ES&page=1')
     .then(res => res.json())
     .then(res => {
         const peliculas = res.results;
         peliculasContainer.innerHTML = '';
-        const baseImgUrl = 'https://image.tmdb.org/t/p/w185';
+        
         peliculas.forEach(pelicula => {
             const imagen = pelicula.poster_path ? `
                 <img src="${baseImgUrl}${pelicula.poster_path}" alt="">` : '<h3 class="noimagen">No hay imagen disponible</h3>'
             peliculasContainer.innerHTML += `
-                <div class="pelicula">
+                <div class="pelicula" onclick="getPeliculaDetailed(${pelicula.id})">
                 <h3 class="title">${pelicula.title}
                 </h3>
                 ${imagen}
             </div>`
         })
     })
-    .catch(error => console.log(error)) // No hace falta pero lo pongo por buenas prácticas.
+    .catch(error => console.error(error)) // No hace falta pero lo pongo por buenas prácticas.
 
 document.querySelector('.form-inline').addEventListener('submit', event => event.preventDefault())
 
@@ -36,7 +36,7 @@ document.querySelector('.buscarForm')
                             const imagen = pelicula.poster_path ? `
                     <img src="${baseImgUrl}${pelicula.poster_path}" alt="">` : '<h3 class="noimagen">No hay imagen disponible</h3>'
                             peliculasContainer.innerHTML += `
-                    <div class="pelicula">
+                    <div class="pelicula" onclick="getPeliculaDetailed(${pelicula.id})">
                     <h3 class="title">${pelicula.title}
                     </h3>
                     ${imagen}
@@ -47,10 +47,38 @@ document.querySelector('.buscarForm')
                     }
 
                 })
+                .catch(error => console.error(error))
         }
     })
 
-// OTRA FORMA DE HACERLO - NO FUNCIONA EL BOTON
+const getPeliculaDetailed = movie_id=>{
+    axios.get(`https://api.themoviedb.org/3/movie/${movie_id}?api_key=cea68b520beecac6718820e4ac576c3a&language=es-ES`)
+    .then(res=>{
+        const pelicula = res.data;
+        if(pelicula.overview !== ''){
+            peliculasContainer.innerHTML = `
+            <div class="details">
+                <h3 class="title">${pelicula.title}</h3>
+                <div class="imageDetails">
+                    <img src="${baseImgUrl}${pelicula.poster_path}" alt="">
+                    <p>${pelicula.overview}</p>
+                </div>
+            </div>`
+        }else{
+            peliculasContainer.innerHTML = `
+            <div class="details">
+                <h3 class="title">${pelicula.title}</h3>
+                <div class="imageDetails">
+                    <img src="${baseImgUrl}${pelicula.poster_path}" alt="">
+                    <p><h3 class="noimagen nodescripcion">No hay descripción disponible</h3></p>
+                </div>
+            </div>`
+        }
+       
+    })
+}
+
+// OTRA FORMA DE HACERLO - PERO NO FUNCIONA EL BOTON
 
 // document.querySelector("#boton").addEventListener('submit', event => {
 //     event.preventDefault();
