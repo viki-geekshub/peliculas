@@ -75,6 +75,24 @@ h3{
     text-align: center;
 }
 
+.pelisPolulares{
+    color: white;
+}
+
+.botones{
+    color: white;
+    background-color: rgba(250, 174, 61, 0.8);
+    border: 1px solid rgba(250, 174, 61, 0.8);
+}
+
+#pagina{
+    padding-top: 1em;
+}
+
+.botonesPopulares{
+    display: none;
+}
+
 /* DETALLES DE LAS PELÍCULAS */
 
 .details{
