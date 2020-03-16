@@ -15,6 +15,7 @@ header{
     padding-left: 3rem; 
     font-size: 3rem;
     color: white !important;
+    cursor: pointer;
 }
 #boton{
     color: white;
@@ -43,7 +44,6 @@ main{
     margin: 0.5em;
     text-align: center;
     width: 15em;
-    cursor: pointer;
 }
 
 h3{
@@ -87,6 +87,7 @@ h3{
 .pelisPopulares:hover{
     background-color: rgba(26, 18, 6, 0.8);
 }
+
 .botones{
     color: white;
     background-color: rgba(250, 174, 61, 0.8);
@@ -120,6 +121,10 @@ h3{
     flex-wrap: wrap;
 }
 
+img{
+    cursor: pointer;
+}
+
 .imageDetails{
     display:flex;  
     justify-content: center;
@@ -130,6 +135,7 @@ h3{
 .title{
     width: 100%;
     margin-bottom: 2.5em;
+    cursor: pointer;
 }
 
 p{
@@ -158,25 +164,62 @@ button.atras{
 
 /* RESPONSIVE */
 
+@media (max-width: 841px) {
+    .peliculas{
+       margin-top: 9em;
+    }
+}
+
 @media (max-width: 622px) {
      .peliculas{
         margin-top: 8em;
      }
 }
 
-@media (max-width: 575px) {
+@media (max-width: 590px) {
     .peliculas{
-       margin-top: 11.5em;
+       margin-top: 10.5em;
+    }
+
+    .ancho{
+        width: 40%;
     }
 }
 
-/* @media (max-width: 247px) {
-    .pelicula{
-        width: 13em !important;
+@media (max-width: 575px) {
+    .peliculas{
+       margin-top: 12.5em !important;
+       padding: 0;
+    }
+}
+
+@media (max-width: 538px) {
+    .peliculas{
+       margin-top: 12.5em !important;
+       padding: 0;
+    }
+}
+
+@media (max-width: 418px) {
+    .pelisPopulares{
+       padding: 0.2em;
+    }
+}
+@media (max-width: 394px) {
+    .pelisPopulares{
+       padding: 0.2em;
+    }
+    .peliculas{
+        margin-top: 16.5em !important;
      }
+}
+/* @media (max-width: 490px) {
+    .peliculas{
+       margin-top: 16em;
+    }
 } */
 
-@media (max-width: 340px) {
+/* @media (max-width: 340px) {
     a.navbar-brand{
        font-size: 2em;
        margin: 0 auto;
@@ -185,7 +228,6 @@ button.atras{
 
 @media (max-width: 247px) {
     a.navbar-brand{
-       font-size: em;
        padding: 0;
     }
-}
+} */

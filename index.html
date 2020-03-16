@@ -12,14 +12,13 @@
 <body>
     <header class="noSelect">
         <nav class="navbar navbar-light bg-light buscador">
-        <a class="navbar-brand">PELÍCULAS</a>
-
-        
-          <button class="pelisPopulares" onclick="getPeliculasPopulares(1)">Las más populares</button>
+        <a class="navbar-brand" onclick="getPeliculasPopulares(page=1)">PELÍCULAS</a>
+          
+          <div class="ancho"><button class="pelisPopulares" onclick="getPeliculasPopulares(page=1)">Las más populares</button></div>
           <button class="botones" onclick="changePage(-1)"><-</button>
           <h3 id="pagina">1</h3>
           <button class="botones" onclick="changePage(1)">-></button> 
-        
+          
         <form class="form-inline buscarForm">
           <input class="form-control mr-sm-2 buscarInput" type="search" placeholder="Busca tu película" name="buscarInput" aria-label="Search" />
           <button id="boton" class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
