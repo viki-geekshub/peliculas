@@ -27,7 +27,6 @@ header{
 }
 
 main{
-    padding-top: ;
     background-color: rgba(250, 174, 61, 0.8);
     display: flex;
     flex-wrap: wrap;
@@ -44,6 +43,7 @@ main{
     margin: 0.5em;
     text-align: center;
     width: 15em;
+    cursor: pointer;
 }
 
 h3{
@@ -75,22 +75,41 @@ h3{
     text-align: center;
 }
 
-.pelisPolulares{
+.pelisPopulares{
     color: white;
+    cursor: pointer;
+    background-color: rgba(250, 174, 61, 0.8);
+    border: 1px solid rgba(250, 174, 61, 0.8);
+    border-radius: 0.2em;
+    padding: 0.5em;
 }
 
+.pelisPopulares:hover{
+    background-color: rgba(26, 18, 6, 0.8);
+}
 .botones{
     color: white;
     background-color: rgba(250, 174, 61, 0.8);
     border: 1px solid rgba(250, 174, 61, 0.8);
+    border-radius: 0.2em;
+}
+
+.botones:hover{
+    background-color: black;
 }
 
 #pagina{
     padding-top: 1em;
 }
 
-.botonesPopulares{
-    display: none;
+.genero{
+    font-style: italic;
+    margin-top: 0.5em;
+    color: black;
+}
+
+.noSelect {
+    user-select: none; /* Para que no se seleccione el texto*/
 }
 
 /* DETALLES DE LAS PELÍCULAS */
@@ -105,7 +124,9 @@ h3{
     display:flex;  
     justify-content: center;
 }
-
+.imageDetails img{
+    align-self: flex-start;
+}
 .title{
     width: 100%;
     margin-bottom: 2.5em;
@@ -117,7 +138,22 @@ p{
 }
 
 .nodescripcion{
-    padding-top: 20%;
+    padding: 4em 6.5em;
+}
+
+button.atras{
+    background-color: rgb(146, 24, 8);
+    border: 2px solid rgb(146, 24, 8);
+    border-radius: 0.2em;
+    color: white;
+    max-height: 3em;
+    padding: 0.5em 1em;
+    margin-left: 3em;
+    margin-top: 6em;    
+}
+
+.atras:hover{
+    background-color: black;
 }
 
 /* RESPONSIVE */
